@@ -1,10 +1,14 @@
-//ResumeForm.js
 
 import  React from "react";
-import {Text, View, StyleSheet, TextInput, Button, TouchableOpacity, ScrollView} from "react-native";
+import {Text, View, StyleSheet, TextInput, Button, ScrollView} from "react-native";
+import { useDispatch} from 'react-redux';
+;
 import { useState } from "react";
 
-export default function ResumeForm() {
+
+const dispatch=useDispatch()
+
+export default function ResumeForm({navigation}) {
     const [userDetails, setUserDetails] = useState({
         fullName: "",
         email: "",
@@ -15,16 +19,19 @@ export default function ResumeForm() {
         education: "",
         
     });
+   
 
     return (
         <ScrollView>
+           
             <View style={styles.cont}>
+            
                 <View style={styles.header}>
                     <Text style={styles.headerText}>Resume Input</Text>
                 </View>
-
+              
                 <View style={styles.details}>
-                    <Text style={styles.titleText}>Personal Details</Text>
+                    <Text style={styles.titleText}>Full Name</Text>
                     <TextInput
                         style={styles.textinput}
                         variant="outlined"
@@ -129,7 +136,7 @@ export default function ResumeForm() {
                 <Button
                     title="Create Resume"
                     style={styles.button}
-                    onPress={() => navigation.navigate("ShowCV", userDetails)}
+                   onPress={() => navigation.navigate("YourCV",userDetails) }
                 ></Button>
             </View>
         </ScrollView>
