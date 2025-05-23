@@ -1,8 +1,12 @@
 import React from "react";
 import {Text,View,StyleSheet} from "react-native";
+import { useSelector } from "react-redux";
 
 export default function ShowCV() {
-   
+    const resume = useSelector((state) => state.resume);
+    const { fullName, email, phoneNo, profSummary, skill, experience, education } = resume;
+    console.log(resume);
+    
     return (
       
         <View style={styles.cont}>
@@ -13,7 +17,7 @@ export default function ShowCV() {
             <View style={styles.details}>
                 
                 <Text style={styles.text}>
-                    <Text style={styles.key}>Full Name: </Text>
+                    <Text style={styles.key}>Full Name: {resume.fullName}</Text>
                     
                 
                 </Text>

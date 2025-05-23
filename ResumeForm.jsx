@@ -1,14 +1,17 @@
 
 import  React from "react";
 import {Text, View, StyleSheet, TextInput, Button, ScrollView} from "react-native";
-import { useDispatch} from 'react-redux';
+
 ;
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateResume } from "./resumeslice";
 
 
-const dispatch=useDispatch()
+// const dispatch=useDispatch()
 
 export default function ResumeForm({navigation}) {
+    const dispatch=useDispatch()
     const [userDetails, setUserDetails] = useState({
         fullName: "",
         email: "",
@@ -19,7 +22,10 @@ export default function ResumeForm({navigation}) {
         education: "",
         
     });
-   
+    const handleSubmit = () => {
+    dispatch(updateResume(userDetails)); 
+    navigation.navigate("ShowCV");       
+  };
 
     return (
         <ScrollView>
@@ -136,7 +142,7 @@ export default function ResumeForm({navigation}) {
                 <Button
                     title="Create Resume"
                     style={styles.button}
-                   onPress={() => navigation.navigate("YourCV",userDetails) }
+                   onPress={handleSubmit}
                 ></Button>
             </View>
         </ScrollView>
