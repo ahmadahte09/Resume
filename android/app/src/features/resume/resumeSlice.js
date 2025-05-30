@@ -21,14 +21,17 @@ const resumeSlice = createSlice({
     setemail(state,action) {
         state.email=action.payload;
     },
-    setphone(state,action) {
+    setphoneNo(state,action) {
         state.phone=action.payload;
     },
     setprofSummary(state,action) {
         state.profSummary=action.payload;
     },
-    setskills(state,action) {
-        state.skills=action.payload;
+    setexperience(state,action) {
+        state.experience=action.payload;
+    },
+    seteducation(state,action) {
+        state.education=action.payload;
     },
 
      
@@ -38,9 +41,11 @@ const resumeSlice = createSlice({
 export const {
  fullName,
  email,
- phone,
+ phoneNo,
  profSummary,
  skills,
+ experience,
+ education
 }=resumeSlice.action
 
 export default resumeSlice.reducer;

@@ -1,10 +1,10 @@
 import React from "react";
-import {Text,View,StyleSheet} from "react-native";
+import {Text,View,StyleSheet,Button} from "react-native";
 import { useSelector } from "react-redux";
 
 export default function ShowCV() {
     const resume = useSelector((state) => state.resume);
-    const { fullName, email, phoneNo, profSummary, skill, experience, education } = resume;
+    const { fullName, email, phoneNo, profSummary, skill, experience, education,fill } = resume;
     console.log(resume);
     
     return (
@@ -24,13 +24,13 @@ export default function ShowCV() {
 
                 
                 <Text style={styles.text}>
-                    <Text style={styles.key}>Email: </Text>
+                    <Text style={styles.key}>Email: {resume.email} </Text>
                     
                 </Text>
 
                 
                 <Text style={styles.text}>
-                    <Text style={styles.key}>Phone Number: </Text>
+                    <Text style={styles.key}>Phone Number: {resume.phoneNo} </Text>
                     
                 </Text>
  
@@ -39,12 +39,12 @@ export default function ShowCV() {
             <View style={styles.details}>
 
                 <Text style={styles.text}>
-                    <Text style={styles.key}>Professional Summary: </Text>
+                    <Text style={styles.key}>Professional Summary: {resume.profSummary} </Text>
                     
                 </Text>
 
                 <Text style={styles.text}>
-                    <Text style={styles.key}>Skill: </Text>
+                    <Text style={styles.key}>Skill: {resume.skill} </Text>
                     
                 </Text>
                 
@@ -55,18 +55,27 @@ export default function ShowCV() {
 
                 
                   <Text style={styles.text}>
-                    <Text style={styles.key}>Experience: </Text>
+                    <Text style={styles.key}>Experience: {resume.experience} </Text>
                  
                   </Text>
                 
 
                   <Text style={styles.text}>
-                    <Text style={styles.key}>Education </Text>
+                    <Text style={styles.key}>Education: {resume.education} </Text>
                    
                   </Text>
+
+                  <Text style={styles.text}>
+                    <Text style={styles.key}>Gender: {resume.fill} </Text>
+                   
+                  </Text>
+
+                  
                 
             </View>
+            <Button title="Print"></Button>
         </View>
+        
        
     );
 }
@@ -88,16 +97,17 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 24,
-        color: "#fff",
+        color: "blue",
         borderBottomColor: "#199187",
         paddingBottom: 10,
         borderBottomWidth: 1,
+        textAlign:"center"
     },
-    titleText: {
+    text: {
         fontWeight: "bold",
-        color: "blue",
-        fontSize: 15,
-        marginBottom: 10,
+        color: "black",
+        fontSize: 25,
+        marginBottom: 20,
     },
     key: {
         fontWeight: "bold" ,

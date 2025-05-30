@@ -1,7 +1,4 @@
 import React from "react";
-
-
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -9,6 +6,7 @@ import ResumeForm from "./ResumeForm";
 import ShowCV from "./ShowCV";
 import store from "./store";
 import { Provider } from "react-redux";
+
 
 const Stack = createNativeStackNavigator();
 
