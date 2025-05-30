@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, TextInput, Button, ScrollView, Alert } from "re
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateResume } from "./resumeslice";
-import { RadioButton } from "react-native-paper";
+import { Checkbox, RadioButton } from "react-native-paper";
 import CheckBox from "@react-native-community/checkbox";
 
 
@@ -50,17 +50,6 @@ export default function ResumeForm({ navigation }) {
                     <Text style={styles.headerText}>Resume Input</Text>
                 </View>
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16,marginBottom:30 }}>
-                    <CheckBox style={{ padding: 30 }}
-                        value={userDetails.checked}
-                        onValueChange={(e) => setUserDetails((prevuserDetails) => ({
-                            ...prevuserDetails,
-                            checked: e,
-                        }))}
-
-                    />
-                    <Text>Form data filled</Text>
-                </View>
 
                 <View style={styles.details}>
                     <Text style={styles.titleText}>Full Name:</Text>
@@ -193,8 +182,9 @@ export default function ResumeForm({ navigation }) {
                         </RadioButton.Group>
                     </View>
 
-                    <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16 }}>
-                        <Checkbox style={{ padding: 30 }}
+
+                    <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, marginBottom: 30 }}>
+                        <CheckBox style={{ padding: 30 }}
                             value={userDetails.checked}
                             onValueChange={(e) => setUserDetails((prevuserDetails) => ({
                                 ...prevuserDetails,
