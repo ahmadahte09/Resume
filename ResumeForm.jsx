@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, TextInput, Button, ScrollView, Alert } from "re
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateResume } from "./resumeslice";
-import { Checkbox, RadioButton } from "react-native-paper";
+import { RadioButton } from "react-native-paper";
 import CheckBox from "@react-native-community/checkbox";
 
 
